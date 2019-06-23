@@ -1,6 +1,13 @@
 SysXRay 1.0.3
 ==============
 
+  ____           __  ______             
+ / ___| _   _ ___\ \/ /  _ \ __ _ _   _ 
+ \___ \| | | / __|\  /| |_) / _` | | | |
+  ___) | |_| \__ \/  \|  _ < (_| | |_| |
+ |____/ \__, |___/_/\_\_| \_\__,_|\__, |
+        |___/                     |___/ 
+
 ## What is this??
 Questa classe è da intendersi come un coltellino svizzero per ottenere info
 sul sistema su cui gira php e qualche trick per visualizzare le 
@@ -17,7 +24,7 @@ consiglio di commentare o cancellare i controlli che non vi interessano.
 
 Usate tutto quello messo a disposizione in questo file a vostro rischio e 
 pericolo, se verrete bannati dal vostro hosting o qualsiasi altra cosa vi 
-possa capitare di male la responsabilità non sarà nostra :grey_exclamation:
+possa capitare di male la responsabilità non sarà nostra :grey_exclamation: :exclamation:
 
 Attualmente **SysXRay** è assolutamente work in progress quindi è possibile che 
 molte funzionalità non siano utilizzabili nell'infrastruttura nella quale 
@@ -25,7 +32,7 @@ lo farete girare, dipende anche dalla vostra fortuna e/o dalla capacità
 modificare questo file secondo esigenze.
 
 ## Disclaimer
-Use this at your own risk :grey_exclamation:
+Use this at your own risk :grey_exclamation: :grey_exclamation: :grey_exclamation:
 
 ## Requirements
 - PHP (Tested with **PHP ^7.x** but should be work also with **PHP 5.x** and others)
@@ -45,7 +52,9 @@ Read the code and do something :stuck_out_tongue_closed_eyes:
 - Cercare di inviare mail
 - Far partire il portscan solo dopo che la pagina è caricata nel caso in cui l'utente lo voglia
 - Far partire i check sul client solo dopo che la pagina è caricata nel caso in cui l'utente lo voglia
+- Parse phpinfo() into Array
 
 ## Special TnX :kissing_cat:
 - https://www.php.net/docs.php
+- https://www.wikipedia.org/
 - Zolik Panik

@@ -340,6 +340,7 @@ class SysXRay {
      *
      * @param string 'RFC2822' or 'ISO8601'
      * @return string
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function getServerDate($type){
@@ -379,6 +380,7 @@ class SysXRay {
      * Rudimental function that check if OS is Windows
      *
      * @return boolean true if OS is Windows, otherwise false
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function isWin(){
@@ -386,10 +388,44 @@ class SysXRay {
     }
 
     /**
+     * apacheVersion
+     * 
+     * @return string with Apache version or empty string if Apache version can't
+     * be retrived or if the server that is running this class isn't Apache
+     * @author n4d46t3m
+     * @version 1.0.0
+     */
+    private function apacheVersion(){
+        return ($apacheVersion=apache_get_version())?$apacheVersion:'';
+    }
+    
+    /**
+     * webSrvSignature
+     * 
+     * @return string
+     * @version 1.0.0
+     */
+    private function webSrvSignature(){
+        return $_SERVER['SERVER_SIGNATURE'];
+    }
+    
+    /**
+     * webSrvInUse
+     * 
+     * @return string
+     * @author n4d46t3m
+     * @version 1.0.0
+     */
+    private function webSrvInUse(){
+        return ($_SERVER["SERVER_SOFTWARE"]) ? $_SERVER["SERVER_SOFTWARE"] : 'UNNKNOWN';
+    }
+
+    /**
      * phpProcessOwner
      * to get the username of the PHP process owner
      *
      * @return string
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function phpProcessOwner(){
@@ -412,6 +448,7 @@ class SysXRay {
      * runningFileOwnerId
      *
      * @return return array of int containing file owner UID and GID
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function runningFileOwnerId(){
@@ -444,6 +481,7 @@ class SysXRay {
      *
      * @param string $verType
      * @return mixed
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function phpVerId($verType = null){
@@ -490,6 +528,7 @@ class SysXRay {
      *
      * @param string moduleName
      * @return string string containing the version of given extension name
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function getModuleVer($module){
@@ -522,6 +561,7 @@ class SysXRay {
      *
      * @param array $modules names
      * @return array
+     * @author n4d46t3m
      * @version 1.0.0
      */
     private function getModulesFuncts($modules){
@@ -615,6 +655,7 @@ class SysXRay {
      * getSystemInfos
      *
      * @return array containing infos related to server OS
+     * @author n4d46t3m
      * @version 1.0.0
      */
     public function getSystemInfos(){
@@ -622,6 +663,9 @@ class SysXRay {
                 'Build OS' => $this->getOsPhpBuild(),
                 'Running OS' => $this->sysUname(),
                 'Windows' => ($this->isWin()) ? 'Sadly Yes' : 'Luckily No',
+                'Apache Version' => (empty($this->apacheVersion())) ? 'Can\'t get Apache version or running server is another' : $this->apacheVersion(),
+                'WEB Server Signature' => strip_tags($this->webSrvSignature()),
+                'WEB Server' => strip_tags($this->webSrvInUse()),
                 'Server Time (RFC2822)' => $this->getServerDate('RFC2822'),
                 'Server Time (ISO8601)' => $this->getServerDate('ISO8601'),
             ];
@@ -631,6 +675,7 @@ class SysXRay {
      * getUserInfos
      *
      * @return array containing infos related to server user
+     * @author n4d46t3m
      * @version 1.0.0
      */
     public function getUserInfos(){
@@ -659,6 +704,7 @@ class SysXRay {
      * getPhpInfos
      *
      * @return array containing infos related PHP used to run this script 
+     * @author n4d46t3m
      * @version 1.0.0
      */
     public function getPhpInfos(){
@@ -680,6 +726,7 @@ class SysXRay {
     /**
      * getClientUserAgent
      * @return string
+     * @author n4d46t3m
      */
     public function getClientUserAgent(){
         return (isset($_SERVER['HTTP_USER_AGENT'])) ? $_SERVER['HTTP_USER_AGENT'] : '';
@@ -687,6 +734,7 @@ class SysXRay {
     /**
      * getClientOS
      * @return string
+     * @author n4d46t3m
      */
     public function getClientOS(){
         $clientOS = 'UNKNOWN OS';
