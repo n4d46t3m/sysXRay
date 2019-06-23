@@ -1,13 +1,6 @@
 SysXRay 1.0.3
 ==============
 
-  ____           __  ______             
- / ___| _   _ ___\ \/ /  _ \ __ _ _   _ 
- \___ \| | | / __|\  /| |_) / _` | | | |
-  ___) | |_| \__ \/  \|  _ < (_| | |_| |
- |____/ \__, |___/_/\_\_| \_\__,_|\__, |
-        |___/                     |___/ 
-
 ## What is this??
 Questa classe è da intendersi come un coltellino svizzero per ottenere info
 sul sistema su cui gira php e qualche trick per visualizzare le 
